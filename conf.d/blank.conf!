@@ -1,0 +1,18 @@
+server {
+    listen 80;
+    listen [::]:80;
+    server_name XXX.XX;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name XXX.XX;
+
+    ssl_certificate /etc/nginx/ssl/CCCC.crt;        #проверить сертификат
+    ssl_certificate_key /etc/nginx/ssl/CCCC.key;    #проверить сертификат
+
+    location / {
+        proxy_pass https://XXX.XX:PPP; # domain.com:4433
+    }
+}
