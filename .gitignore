@@ -1,5 +1,5 @@
 logs/*
 ssl/*
 conf.d/*
-!conf.d/blank.conf!
+!conf.d/.conf_blank
 .env
