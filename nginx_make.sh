@@ -2,7 +2,6 @@
 
 Z=$1
 PROJECT=$2
-DOMAIN="XXXXX"
 HOST="$Z-$PROJECT.$DOMAIN"
 
 NGINX_CONF=$(cat /server/nginx-proxy/conf.d/.conf_blank)   > /dev/null
