@@ -34,4 +34,4 @@ bash nginx_make.sh db5 testprjct
 ```sh
 docker restart nginx-proxy
 ```
-<h3 align="right"><b><a  href="https://github.com/nikitazykov">®By nikitazykov</a></b></h3>
+<h3 align="right"><b><a  href="https://github.com/nikitazykov">By nikitazykov</a></b></h3>
