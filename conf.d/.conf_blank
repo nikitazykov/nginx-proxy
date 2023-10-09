@@ -14,8 +14,15 @@ server {
     ssl_certificate /etc/nginx/ssl/CCCC.crt;        #проверить сертификат
     ssl_certificate_key /etc/nginx/ssl/CCCC.key;    #проверить сертификат
 
+    ;if ($allowed_country = no) {
+    ;    return 403;
+    ;}
+	
     location / {
-        proxy_pass https://XXX.XX:PPP; # domain.com:4433
+        proxy_pass https://XXX.XX:443; # domain.com:443       proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
     }
 
     access_log /var/log/nginx/XXX.XX-access.log;
